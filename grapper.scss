@@ -1,0 +1,127 @@
+// Margin & Padding dimensions list
+// Version 1.0.0
+// Function to create margin & padding
+@mixin classlist($i) {
+  @if($i==0) {
+    // Padding
+    .ptn {
+      padding-top: #{$i} !important;
+    }
+    .prn {
+      padding-right: #{$i} !important;
+    }
+    .pbn {
+      padding-bottom: #{$i} !important;
+    }
+    .pln {
+      padding-left: #{$i} !important;
+    }
+    .phn {
+      padding-left: #{$i} !important;
+      padding-right: #{$i} !important;
+    }
+    .pvn {
+      padding-bottom: #{$i} !important;
+      padding-top: #{$i} !important;
+    }
+    .pn {
+      padding: #{$i} !important;
+    } // Margin
+    .mtn {
+      margin-top: #{$i} !important;
+    }
+    .mrn {
+      margin-right: #{$i} !important;
+    }
+    .mbn {
+      margin-bottom: #{$i} !important;
+    }
+    .mln {
+      margin-left: #{$i} !important;
+    }
+    .mhn {
+      margin-left: #{$i} !important;
+      margin-right: #{$i} !important;
+    }
+    .mvn {
+      margin-bottom: #{$i} !important;
+      margin-top: #{$i} !important;
+    }
+    .mn {
+      margin: #{$i} !important;
+    }
+  }
+  @else {
+    // Margin
+    .mt-#{$i} {
+      margin-top: #{$i}px !important;
+    }
+    .mtr-#{$i} {
+      margin-top: -#{$i}px !important;
+    }
+    .mr-#{$i} {
+      margin-right: #{$i}px !important;
+    }
+    .mrr-#{$i} {
+      margin-right: -#{$i}px !important;
+    }
+    .mb-#{$i} {
+      margin-bottom: #{$i}px !important;
+    }
+    .mbr-#{$i} {
+      margin-bottom: -#{$i}px !important;
+    }
+    .ml-#{$i} {
+      margin-left: #{$i}px !important;
+    }
+    .mlr-#{$i} {
+      margin-left: -#{$i}px !important;
+    }
+    .mh-#{$i} {
+      margin-left: #{$i}px !important;
+      margin-right: #{$i}px !important;
+    }
+    .mhr-#{$i} {
+      margin-left: -#{$i}px !important;
+      margin-right: -#{$i}px !important;
+    }
+    .mv-#{$i} {
+      margin-bottom: #{$i}px !important;
+      margin-top: #{$i}px !important;
+    }
+    .mvr-#{$i} {
+      margin-bottom: -#{$i}px !important;
+      margin-top: -#{$i}px !important;
+    } // Padding
+    .pt-#{$i} {
+      padding-top: #{$i}px !important;
+    }
+    .pr-#{$i} {
+      padding-right: #{$i}px !important;
+    }
+    .pb-#{$i} {
+      padding-bottom: #{$i}px !important;
+    }
+    .pl-#{$i} {
+      padding-left: #{$i}px !important;
+    }
+    .ph-#{$i} {
+      padding-left: #{$i}px !important;
+      padding-right: #{$i}px !important;
+    }
+    .pv-#{$i} {
+      padding-bottom: #{$i}px !important;
+      padding-top: #{$i}px !important;
+    }
+  }
+}
+
+// Iterate
+@for $i from 0 through 100 {
+  @if $i < 35 {
+    @include classlist($i);
+  }
+  @else if $i % 5==0 {
+    @include classlist($i);
+  }
+}
